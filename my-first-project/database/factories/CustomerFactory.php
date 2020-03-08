@@ -7,6 +7,8 @@ use App\Customer;
 use Faker\Generator as Faker;
 
 $factory->define(Customer::class, function (Faker $faker) {
+    static $seed =0;
+    $faker->seed($seed++);
     return [
         'company_id'=>function() {return Company::all()->random();},
         'name'=>$faker->name,

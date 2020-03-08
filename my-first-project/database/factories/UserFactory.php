@@ -18,6 +18,8 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+    static $seed =0;
+    $faker->seed($seed++);
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,

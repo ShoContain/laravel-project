@@ -15,7 +15,7 @@ class CustomersController extends Controller
     public function __construct(){
       $this->middleware('auth');
     }
-    
+
     public function index(){
       $customers = Customer::with('company')->paginate(5);
       return view('customers.index',compact('customers'));
